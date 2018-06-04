@@ -12,7 +12,7 @@ import locust
 
 from . import events, runners, web
 from .parser import parse_options, create_options
-from .core import HttpLocust, Locust, TaskSet
+from .core import HttpLocust, Locust
 from .inspectlocust import get_task_ratio_dict, print_task_ratio
 from .log import console_logger, setup_logging
 from .runners import LocalLocustRunner, MasterLocustRunner, SlaveLocustRunner
