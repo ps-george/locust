@@ -1,4 +1,4 @@
-__version__ = "0.9.0"
+__version__ = "0.9.1"
 
 from .core import HttpLocust, Locust, TaskSet, task
 from .exception import InterruptTaskSet, ResponseError, RescheduleTaskImmediately

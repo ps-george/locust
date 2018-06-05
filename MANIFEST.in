@@ -1,2 +1,3 @@
 recursive-include locust/static *
 recursive-include locust/templates *
+include LICENSE
