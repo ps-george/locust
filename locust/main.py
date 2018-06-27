@@ -137,7 +137,7 @@ def load_filterfile(path, filter_function):
     return imported.__doc__, classes
 
 
-def load_locustfile(path):
+def load_locustfile(path, ignore_prefix='_'):
     """
     Import given locustfile path and return (docstring, callables).
 
@@ -145,10 +145,10 @@ def load_locustfile(path):
     dictionary of ``{'name': callable}`` containing all callables which pass
     the "is a Locust" test.
     """
-    return load_filterfile(path, is_locust)
+    return load_filterfile(path, lambda tup: is_locust(tup, ignore_prefix=ignore_prefix))
 
 
-def load_tasksetfile(path):
+def load_tasksetfile(path, ignore_prefix='_'):
     """
     Import given tasksetfile path and return (docstring, callables).
 
@@ -156,7 +156,7 @@ def load_tasksetfile(path):
     dictionary of ``{'name': callable}`` containing all callables which pass
     the "is a TaskSet" test (`is_taskset`).
     """
-    return load_filterfile(path, is_taskset)
+    return load_filterfile(path, lambda tup: is_locust(tup, ignore_prefix=ignore_prefix))
 
 
 def run_locust(options, arguments=[], cli_mode=False):
