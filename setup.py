@@ -13,7 +13,7 @@ with open(_init_file, 'rb') as f:
         f.read().decode('utf-8')).group(1)))
 
 setup(
-    name='locustio',
+    name='pslocust',
     version=version,
     description="Website load testing framework",
     long_description="""Locust is a python utility for doing easy, distributed load testing of a web site""",
