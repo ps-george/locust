@@ -156,7 +156,7 @@ def load_tasksetfile(path, ignore_prefix='_'):
     dictionary of ``{'name': callable}`` containing all callables which pass
     the "is a TaskSet" test (`is_taskset`).
     """
-    return load_filterfile(path, lambda tup: is_locust(tup, ignore_prefix=ignore_prefix))
+    return load_filterfile(path, lambda tup: is_taskset(tup, ignore_prefix=ignore_prefix))
 
 
 def run_locust(options, arguments=[], cli_mode=False):
